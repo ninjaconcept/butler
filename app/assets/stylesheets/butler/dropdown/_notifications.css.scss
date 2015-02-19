@@ -1,0 +1,26 @@
+/* Notificastion Dropdowns */
+
+ul.dropdown-menu.notifications-dropdown {
+  min-height: 46px;
+  max-width: 320px;
+  min-width: 320px;
+  padding: 0;
+
+  li {
+    position: relative;
+    z-index: 2;
+  }
+
+  .alert {
+    margin: $padding-small-horizontal;
+  }
+
+  li.no-notifications {
+    left: $padding-small-horizontal;
+    position: absolute;
+    right: $padding-small-horizontal;
+    text-align: center;
+    top: $padding-small-horizontal;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,10 @@
+.clearfix {
+  ;
+}
+
+/* Basic animations */
+
+
+.ease-300ms {
+  @inlcude transition(all 300ms ease);
+}

@@ -1,0 +1,51 @@
+/*
+ * -----------------------------------------------------------------
+ * Basic Table Styles
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ *
+ * @author:   rebellium
+ * @updated:  Mon Aug 25 13:04:20 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.table {
+
+  label {
+    margin-bottom: 0px;
+  }
+
+  th.nowrap, td.nowrap {
+    white-space: nowrap;
+  }
+
+  thead th {
+    background-color: darken($table-bg-accent, 4%);
+    border-bottom: 0px !important;
+    font-size: 12px;
+  }
+
+  &.table-striped {
+    th, td {
+      border-color: rgba(#fff, 0);
+    }
+
+    & > tbody > tr:nth-child(even) > td,
+    & > tbody > tr:nth-child(even) > th {
+      background: $table-bg-accent;
+    }
+
+    & > tbody > tr:nth-child(odd) > td,
+    & > tbody > tr:nth-child(odd) > th {
+      background: #fff;
+    }
+  }
+}
+
+.table-fixed-th {
+  th {
+    width: 220px;
+  }
+}

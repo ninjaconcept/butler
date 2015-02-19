@@ -1,0 +1,113 @@
+/*
+ * -----------------------------------------------------------------
+ * User Profile in Page Header
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ *
+ * @author:   rebellium
+ * @updated:  Sun Aug 24 15:43:23 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.user-profile {
+
+  @extend .clearfix;
+  @include user-select(none);
+  cursor: default;
+  height: $page-header-default-height;
+  padding: 0px 20px;
+  position: relative;
+
+  &> * { vertical-align: top; }
+
+  .dropdown-menu { margin-top: 10px; }
+
+  .notifications {
+    @include position(absolute, 0 0 0 52px);
+    display: inline-block;
+    z-index: 2;
+
+    ul.dropdown-menu {
+      margin-right: 0px;
+    }
+
+    &:hover .badge {
+      background: darken($brand-danger, 10);
+    }
+
+    .badge {
+      @include border-radius(0 4px 4px 0);
+      background: $brand-danger;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 32px;
+      padding: 0;
+      width: 32px;
+      cursor: pointer;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .persona {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 16px;
+    padding-right: 24px;
+    position: relative;
+
+    img {
+      @include border-radius(4px);
+      display: inline-block;
+      height: 32px;
+      margin: 0;
+      width: 32px;
+    }
+
+    .name {
+      display: inline-block;
+      padding-left: 5px;
+    }
+
+    strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      font-style: italic;
+      opacity: 0.5
+    }
+
+    .caret {
+      @include position(absolute, 50% 0px 0 0);
+      border-top: 6px solid #000;
+      border-right: 6px solid rgba(0, 0, 0, 0);
+      border-left: 6px solid rgba(0, 0, 0, 0);
+      margin-top: -3px;
+    }
+  }
+
+  .notifications + .persona {
+    min-width: 64px;
+    .name { padding-left: 37px; }
+    img   { @include border-radius(4px 0 0 4px); }
+  }
+
+}
+
+/* Media Queries */
+
+@include media-query(600px) {
+  .user-profile {
+    .persona {
+      .name {
+        display: none;
+      }
+    }
+  }
+}

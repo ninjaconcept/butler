@@ -1,0 +1,20 @@
+.md-editor {
+  border-radius: 4px;
+}
+.md-editor > textarea {
+  background: #fff;
+  padding: 12px;
+  border-radius: 0 0 4px 4px;
+  border: 0px;
+  font-family: Helvetica, Arial, sans-serif;
+  min-height: 10em !important;
+}
+
+.md-editor .md-footer,
+.md-editor > .md-header {
+  background: #e0e0e0;
+}
+
+.md-editor > .md-header {
+  border-radius: 4px 4px 0 0;
+}

@@ -1,0 +1,62 @@
+/* Scrollbars, webkit-only */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(#000,0);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 10px solid transparent;
+  border-width: 20px 0 20px 10px;
+  -webkit-border-image: url(scss/scrollbar_dark.png) 20 20 round; /* Safari 3.1-5 */
+  -o-border-image: url(scss/scrollbar_dark.png) 20 20 round; /* Opera 11-12.1 */
+  border-image: url(scss/scrollbar_dark.png) 20 20 round;
+}
+
+/* For future Firefox releases */
+
+::-moz-scrollbar {
+  width: 10px;
+
+}
+
+::-moz-scrollbar-track {
+  background: rgba(#000,0);
+}
+
+::-moz-scrollbar-thumb {
+  border: 10px solid transparent;
+  border-width: 20px 0 20px 10px;
+  -webkit-border-image: url(scss/scrollbar_dark.png) 20 20 round; /* Safari 3.1-5 */
+  -o-border-image: url(scss/scrollbar_dark.png) 20 20 round; /* Opera 11-12.1 */
+  border-image: url(scss/scrollbar_dark.png) 20 20 round;
+}
+
+
+.scr-br {
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-image: url(scss/scrollbar_bright.png) 20 20 round; /* Safari 3.1-5 */
+    -o-border-image: url(scss/scrollbar_bright.png) 20 20 round; /* Opera 11-12.1 */
+    border-image: url(scss/scrollbar_bright.png) 20 20 round;
+  }
+
+  &::-moz-scrollbar-thumb {
+    -webkit-border-image: url(scss/scrollbar_bright.png) 20 20 round; /* Safari 3.1-5 */
+    -o-border-image: url(scss/scrollbar_bright.png) 20 20 round; /* Opera 11-12.1 */
+    border-image: url(scss/scrollbar_bright.png) 20 20 round;
+  }
+
+}
+
+.compact {
+  .scr-br {
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+}
+

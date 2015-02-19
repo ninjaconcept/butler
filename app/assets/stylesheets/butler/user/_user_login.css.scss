@@ -1,0 +1,62 @@
+/*
+ * -----------------------------------------------------------------
+ * Login, Signup and other user related elements
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ * @requires  ui/panels
+ *
+ * @author:   rebellium
+ * @updated:  Sun Aug 24 14:07:49 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.panel-login, .panel-signup {
+
+  background: lighten($content-bg-color, 10%);
+  border: 3px solid rgba(#000, .175);
+  border-width: 0 0 3px 0;
+  margin: 3% auto 0 auto;
+  max-width: 360px;
+
+  .panel-heading {
+    border-bottom: 1px solid rgba(#000, .125);
+    padding: 35px 40px 25px 40px;
+    text-align: center;
+
+    .panel-title {
+      font-size: $font-size-base * 1.55;
+    }
+  }
+
+  .panel-body {
+    padding: 30px 40px 30px 40px;
+  }
+
+  .avatar {
+    -webkit-touch-callout: none;
+    margin: 0 0 $padding-base-vertical 0;
+    pointer-events: none;
+    background-color: transparent;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+
+  hr {
+    margin: 16px 0;
+    border-color: rgba(#000, .1);
+  }
+
+  &.panel-default {
+    .panel-heading { border: 0px; }
+    .panel-body    { padding-top: 0px; }
+  }
+}
+
+
+.panel-signup {
+  max-width: 400px;
+}

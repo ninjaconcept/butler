@@ -1,0 +1,88 @@
+/*
+ * -----------------------------------------------------------------
+ * Datepicker Styles
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ * @requires  bootstrap-datepicker3
+ *
+ * @author:   rebellium
+ * @updated:  Tue Aug 26 16:18:58 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.datepicker-dropdown.dropdown-menu {
+
+  @include border-radius($border-radius-base);
+  z-index: 100000 !important;
+
+  &:after {
+    border-bottom-color: shade($table-bg-accent, 4%);
+  }
+
+  .datepicker-days {
+
+    &:after {
+      @include position(absolute, 0px 0 0 0px);
+      @include border-radius($border-radius-base $border-radius-base 0 0);
+      background-color: shade($table-bg-accent, 4%);
+      border-bottom: 1px solid shade($table-bg-accent, 10%);
+      content: '';
+      height: 65px;
+      width: 100%;
+      z-index: 2;
+    }
+
+    table {
+      position: relative;
+      z-index: 3;
+      border-collapse: separate;
+      border-spacing: 2px;
+
+      tbody tr td.day {
+
+        @include border-radius(30px);
+
+        &.today {
+          background: none;
+          border: 1px solid $brand-primary;
+          color: $brand-primary;
+        }
+
+        &.active, &.today {
+          font-weight: bold;
+        }
+      }
+    }
+
+    thead {
+
+      .datepicker-switch {
+        pointer-events: none;
+      }
+
+      .datepicker-switch, .prev, .next {
+        font-size: $font-size-base * 1.15;
+
+        &:hover {
+          background: shade($table-bg-accent, 10%);
+        }
+      }
+
+      .prev, .next {
+        @include border-radius(30px)
+      }
+
+      tr th.dow {
+        padding-bottom: 10px;
+        font-weight: normal;
+        font-size: 11px;
+        text-transform: uppercase;
+        &:hover {
+          background: none;
+        }
+      }
+    }
+  }
+}

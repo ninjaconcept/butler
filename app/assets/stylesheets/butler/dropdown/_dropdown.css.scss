@@ -1,0 +1,49 @@
+/* Add pointer arrows to dropdowns */
+
+ul.dropdown-menu {
+
+  padding: 5px;
+
+  &:before, &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+  }
+
+  &:before {
+    border-left: 9px solid rgba(0, 0, 0, 0);
+    border-right: 9px solid rgba(0, 0, 0, 0);
+    border-bottom: 9px solid #CCC;
+    border-bottom-color: rgba(0, 0, 0, 0.3);
+    top: -9px;
+    left: 9px;
+  }
+
+  &:after {
+    border-left: 8px solid rgba(0, 0, 0, 0);
+    border-right: 8px solid rgba(0, 0, 0, 0);
+    border-bottom: 8px solid #FFF;
+    top: -8px;
+    left: 10px;
+  }
+
+  &.pull-right {
+    &:before {
+      left: auto;
+      right: 9px;
+    }
+    &:after {
+      left: auto;
+      right: 10px;
+    }
+  }
+
+  li a i.fa {
+    margin-right: 5px;
+    @include opacity(.75);
+  }
+
+  li.divider {
+    margin: 5px -5px;
+  }
+}

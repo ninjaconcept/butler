@@ -1,0 +1,124 @@
+/*
+ * -----------------------------------------------------------------
+ * Compact Sidebar Layout and Navigation
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ * @requires  ui/sidebar/sidebar
+ * @requires  ui/sidebar/sidebar_navigation
+ *
+ * @author:   rebellium
+ * @updated:  Tue Aug 26 16:17:44 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.compact {
+
+  /* Layout */
+
+  .page-sidebar-content {
+    overflow: visible;
+
+    .nano .nano-pane {
+      display: none !important;
+    }
+  }
+
+  .page-sidebar {
+    width: $sidebar-compact-width;
+
+    .global-search-field {
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+      white-space: nowrap;
+
+      input.search-field {
+        @include transition-duration(0ms);
+        opacity: 0;
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 0px;
+      }
+    }
+
+    .search-field-trigger {
+      display: inline-block;
+    }
+
+    .brand {
+      padding: 12px 0px;
+      text-align: center;
+    }
+
+    .brand-name { display: none; }
+  }
+
+
+   /* Navigation */
+
+  .page-sidebar, .page-sidebar.inverse {
+
+    .navigation.sidebar-navigation {
+
+      width: $sidebar-compact-width;
+
+      ul > li > a {
+
+        padding: 13px 0;
+
+        .title, &:after { display: none; }
+
+        .badge {
+          @include border-radius(0px);
+          @include position(absolute, 0px 0px 0px 0px);
+          float: none;
+          z-index: 2;
+
+          .fa {
+            padding-top: 3px;
+            display: block;
+            opacity: 1;
+            color: #fff;
+          }
+
+          span {
+            @include position(absolute, 0 0px 5px 0px);
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        .fa {
+          font-size: $font-size-base * 1.3;
+          position: relative;
+          text-align: center;
+          width: 100%;
+          z-index: 1;
+        }
+      }
+
+      ul.expand-menu { display: block; }
+
+      ul > li > ol {
+        position: fixed;
+        margin-top: -(22px + 4  + $line-height-base * $font-size-base * 1.3);
+        margin-left: $sidebar-compact-width;
+        width: $sidebar-min-width - 30;
+
+        & > li > a {
+          padding-left: 20px;
+        }
+
+        & li > ol > li a {
+          padding-left: 44px;
+        }
+      }
+    }
+
+    li.toggle > ol {
+      display: none;
+    }
+  }
+}

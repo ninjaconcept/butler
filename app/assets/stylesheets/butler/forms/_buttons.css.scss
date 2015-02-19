@@ -1,0 +1,78 @@
+/*
+ * -----------------------------------------------------------------
+ * Button Styles
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ *
+ * @author:   rebellium
+ * @updated:  Mon Aug 25 07:24:52 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.btn {
+  border-radius: $border-radius-button-base;
+  border-width: 0px;
+  outline: none;
+
+  &:focus {
+    box-shadow: none !important;
+    outline: none;
+  }
+}
+
+.btn-grey {
+  color: #444;
+}
+
+.btn.btn-small {
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn.btn-tiny {
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.btn-group {
+  &>.btn:first-child {
+    margin-right: 2px;
+  }
+  &>.btn:last-child {
+    margin-left: 1px;
+  }
+
+  .form, form {
+    float: left;
+  }
+}
+
+
+.full-width-buttons {
+  .btn {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+}
+
+.btn-grey {
+  background: lighten($brand-default, 5%);
+
+  &:hover { background: $brand-default; }
+}
+
+.btn-danger {
+  background: $brand-danger;
+
+  &:hover { background: darken($brand-danger, 5%); }
+}
+
+.btn-primary {
+  background: $brand-primary;
+
+  &:hover { background: darken($brand-primary, 5%); }
+}

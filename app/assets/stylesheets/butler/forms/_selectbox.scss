@@ -1,0 +1,74 @@
+/*
+ * -----------------------------------------------------------------
+ * Custom Selectbox Styles
+ * -----------------------------------------------------------------
+ *
+ * @author:   rebellium
+ * @updated:  Sun Aug 24 14:17:35 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.select-btn {
+  background: #fff url('scss/select_caret.svg') no-repeat right center;
+  border-radius: $border-radius-button-base;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin: 0;
+  overflow: hidden;
+  padding: 0 20px 0 0;
+  vertical-align: top;
+}
+
+.select-btn select {
+  @include prefixer('appearance', button, ms webkit moz);
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  display: block;
+  font-size: $font-size-base;
+  height: ($line-height-computed + ($padding-base-vertical * 2));
+  line-height: $line-height-base;
+  margin: 0;
+  outline: rgba(#000, 0);
+  padding: $padding-base-vertical - 2 $padding-base-horizontal;
+  position: relative;
+  top: 1px;
+  white-space: nowrap;
+  width: 124%;
+}
+
+.select-btn select:focus {
+  outline: rgba(#000, 0);
+}
+
+.select-btn-small {
+  font-size: 12px;
+  select {
+    padding: 6px 10px;
+    font-size: 12px;
+    height: auto;
+  }
+}
+
+@-moz-document url-prefix() { // FF only
+
+  .select-btn {
+    padding-right: 0px !important;
+    select { text-indent: -2px; }
+
+    select:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 $text-color;
+    }
+
+    option {
+      color: $text-color;
+      font-weight: 400;
+      text-shadow: none;
+    }
+  }
+}
+

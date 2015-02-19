@@ -1,0 +1,11 @@
+- model_class = <%= class_name %>
+
+.page-content-header
+  .container-flex
+    %h3= t '.title', default: [:'helpers.titles.edit', '%{model} bearbeiten'], model: model_class.model_name.human.titleize
+
+.content
+  .container-flex
+    .row
+      .col-md-12
+        = render 'form'

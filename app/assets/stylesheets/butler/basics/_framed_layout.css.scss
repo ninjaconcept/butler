@@ -1,0 +1,22 @@
+body.framed {
+  background: #000;
+
+.page-container {
+  border-radius: 8px;
+  position: absolute;
+  overflow: hidden;
+  height: auto;
+  width: auto;
+  top: 5%;
+  bottom: 5%;
+  left: 6%;
+  right: 6%;
+}
+
+
+  .page-header.sticky {
+    position: absolute;
+    border-radius: 8px 0 0 0;
+    overflow: hidden;
+  }
+}

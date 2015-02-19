@@ -1,0 +1,103 @@
+/* TODO: Split some parts to separate partials */
+
+html, body, .page-container {
+  background-color: $content-bg-color;
+  position: relative;
+
+  direction: ltr;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.page-container {
+  position: relative;
+}
+
+body, input, textarea, button, select, option {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-family-sans-serif;
+/*  font-weight: 300;*/
+}
+
+.page-container {
+  -webkit-overflow-scroll: touch;
+
+  .content {
+    position: relative;
+    padding: 20px;
+  }
+
+  &.has-sticky-header {
+    .content {
+      padding-bottom: $page-header-default-height;
+    }
+  }
+}
+
+a { color: $brand-primary; }
+
+.page-content {
+  @include position(absolute, $page-header-default-height 0px 0px $sidebar-default-width);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-content-header {
+  @include position(fixed, 0px 0 0 0);
+  display: block;
+  height: $page-header-default-height;
+  line-height: 30px;
+  margin-left: 58px;
+  padding: 12px 0;
+  z-index: 100;
+
+  h1, h2, h3, h4, h5, h6 {
+    display: inline-block;
+    font-size: $font-size-base * 1.65;
+    line-height: inherit;
+    margin: 0 12px 0 0;
+    padding: 0;
+    vertical-align: top;
+  }
+}
+
+
+@include media-query(1280px) {
+  .page-content {
+    left: $sidebar-min-width;
+  }
+}
+
+@include media-query(600px) {
+  .page-content {
+    left: 0;
+  }
+}
+
+
+.compact {
+    .page-content {
+
+
+    left: $sidebar-compact-width;
+       }
+}
+
+i.fa {
+  font-size: 14px;
+}
+
+small {
+  display: inline-block;
+}
+
+#nprogress .bar {
+  background: $brand-primary;
+}
+
+
+.tooltip {
+  white-space: nowrap;
+}

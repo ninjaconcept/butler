@@ -1,0 +1,284 @@
+/*
+ * -----------------------------------------------------------------
+ * Basic Panel Styles
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ *
+ * @author:   rebellium
+ * @updated:  Tue Aug 26 16:18:30 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.panel {
+  @include border-radius($panel-border-radius);
+  box-shadow: none;
+  border: 0px;
+  position: relative;
+
+  .panel-toggle-btn {
+    font-size: 0px;
+    border-radius: 40px;
+    padding: 0px;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .panel-toggle-btn:before, .panel-toggle-btn:after {
+    font-size: 14px;
+    content: "\f078";
+    font-family: FontAwesome;
+    display: none;
+  }
+
+  .panel-toggle-btn:after {
+    display: block;
+    content: "\f077";
+  }
+
+  &.closed {
+
+    .panel-body, .panel-footer, .panel-toggle-btn:after {
+      display: none;
+    }
+    .panel-toggle-btn:before {
+      display: block;
+    }
+  }
+
+  .panel-heading {
+    @extend .clearfix;
+    @include border-radius(
+      $panel-border-radius
+      $panel-border-radius
+      0 0
+    );
+    background: #fff;
+    border: 0px;
+    line-height: ($line-height-computed + ($padding-base-vertical) * 2);
+    cursor: default;
+
+    .panel-toggle-btn {
+      float: right;
+    }
+
+    .panel-title {
+      font-size: $font-size-base * 1.25;
+      line-height: ($line-height-computed + ($padding-base-vertical) * 2);
+      position: relative;
+
+      &.text-center {
+        position: absolute;
+        width: 100%;
+        left: 0px;
+      }
+
+      .btn {
+        padding: 0 6px;
+        line-height: 32px;
+      }
+
+      .fa {
+        position: relative;
+        top: -1px;
+        margin-right: 5px;
+      }
+
+      small {
+        display: block;
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+      }
+    }
+  }
+}
+
+.panel-actions {
+  line-height: inherit;
+  position: relative;
+  margin: 0 -4px;
+  z-index: 2;
+
+  .btn-action {
+    @include transition(all 300ms ease);
+    background: none;
+    border: none;
+    cursor: pointer;
+    height: ($line-height-computed + ($padding-base-vertical) * 2);
+    line-height: ($line-height-computed + ($padding-base-vertical) * 2) - 2;
+    margin: 0px;
+    opacity: 0.75;
+    outline: none;
+    padding: 0px;
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .fa { font-size: 16px; }
+
+    &.btn-bordered {
+      border-radius: $border-radius-button-base;
+      border: 1px solid #fff;
+      padding: 0 8px;
+      .fa {
+      vertical-align: middle;
+      margin-right: 3px;
+      }
+
+    }
+
+  }
+
+  button, .btn, .btn-action, .dropdown, .dropup, input {
+    display: inline-block;
+    margin: 0 4px;
+    vertical-align: top;
+  }
+
+  input[type="text"], input[type="email"],
+  input[type="tel"], input[type="search"]
+  .select-btn {
+    height: ($line-height-computed + ($padding-base-vertical * 2));
+    width: 240px;
+  }
+
+  & *[data-toggle="panel"] {
+    @include transform(rotate(0deg));
+  }
+
+}
+
+.panel.closed {
+  .panel-actions *[data-toggle="panel"] {
+    @include transform(rotate(180deg));
+  }
+  .panel-heading {
+    @include border-radius($border-radius-base);
+  }
+}
+
+.panel-tabs {
+  padding: $panel-body-padding;
+}
+
+.panel-body {
+  position: relative;
+  padding-top: 0px;
+
+  &.fixed-height {
+    overflow: hidden;
+    .nano { height: 388px; }
+  }
+
+  table {
+    margin-bottom: 0px;
+  }
+}
+
+.panel-footer {
+  @extend .clearfix;
+  @include border-radius(
+    0 0
+    $panel-border-radius
+    $panel-border-radius
+  );
+  line-height: 30px;
+  padding: $panel-footer-padding;
+  background: lighten($content-bg-color, 10%);
+  .pagination {
+    margin: 0;
+  }
+
+  .dropzone {
+    border: 0px;
+    line-height: 1.4;
+    text-align: center;
+
+    .description {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    form {
+      margin: 0 auto;
+    }
+
+    input[type="file"] {
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+}
+
+
+.panel-warning,
+.panel-danger,
+.panel-primary,
+.panel-success,
+.panel-info {
+
+  .panel-heading { color: #fff;
+
+    h3 { font-weight: bold; }
+    small { color: #fff; }
+  }
+
+  .panel-body {
+    padding: $panel-body-padding;
+    &.fixed-height {
+      overflow: hidden;
+      .nano { height: 368px; }
+    }
+  }
+}
+
+.panel-default {
+  .panel-heading {
+    background: lighten($content-bg-color, 10%);
+    color: $text-color;
+  }
+  .panel-body {
+    padding: $panel-body-padding;
+  }
+}
+
+.panel-primary {
+  .panel-heading {
+    background: $brand-primary;
+  }
+}
+.panel-warning {
+  .panel-heading {
+    background: $brand-warning;
+  }
+}
+
+.panel-danger {
+  .panel-heading {
+    background: $brand-danger;
+  }
+}
+
+.panel-success {
+  .panel-heading {
+    background: $brand-success;
+  }
+}
+
+.panel-info {
+  .panel-heading {
+    background: $brand-info;
+  }
+}

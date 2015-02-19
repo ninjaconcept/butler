@@ -1,0 +1,70 @@
+/*
+ * -----------------------------------------------------------------
+ * Config File for NinjaConcept AdmitKit
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ *
+ * @author:   rebellium
+ * @updated:  Sun Aug 24 14:26:04 2014 UTC
+ *
+ * Use this variables to alter colors, font-sizes, paddings, grids
+ * and more. You can use all the bootstrap varibales available.
+ * See more at:; http://getbootstrap.com/customize/#less-variables
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+// Bootstrap Variables
+
+
+$font-family-sans-serif: Helvetica, "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica NeueLight", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-size-base: 14px;
+
+$grid-gutter-width: 20px;
+
+$border-radius-base:        5px;
+$border-radius-button-base: 3px;
+$border-radius-avatar:      50%;
+$panel-border-radius:       $border-radius-base;
+
+$input-color-placeholder: #aaa;
+$input-border-focus:      #95a5a6;
+
+$panel-body-padding:    20px;
+$panel-heading-padding: 15px 20px;
+$panel-footer-padding:  10px 20px;
+
+$brand-primary: #028be8;
+$brand-success: #028be8;
+$brand-danger:  #d0021b;
+$brand-warning: #f1c40f;
+$brand-default: #bdc3c7;
+$brand-silver:  #ccc;
+
+$text-color:   lighten(#000, 15%);
+$gray-light:   lighten(#000, 50%);
+$gray-lighter: lighten(#000, 96%);
+$gray-medium: #929292;
+
+$table-bg-accent:    lighten($brand-default, 21%);
+$table-cell-padding: 10px 12px;
+$table-border-color: lighten($brand-default, 15%);
+
+
+/* Admin UI Variables */
+
+$page-header-default-height: 56px;
+
+$sidebar-compact-width: 56px;
+$sidebar-min-width:     270px;
+$sidebar-max-width:     21.03975%;
+$sidebar-default-width: $sidebar-max-width;
+
+
+
+$content-bg-color:     #d9dcde;
+$sidebar-bg-color:     lighten($content-bg-color, 10%);
+$sidebar-inverse-bg-color: #1f2833;
+$sidebar-badge-color:  $brand-danger;
+

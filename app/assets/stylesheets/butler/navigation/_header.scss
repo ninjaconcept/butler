@@ -1,0 +1,78 @@
+/*
+ * -----------------------------------------------------------------
+ * Page Header
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ *
+ * @author:   rebellium
+ * @updated:  Sun Aug 24 14:30:04 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.page-header {
+  @include clearfix;
+  box-shadow: 0 1px 3px rgba(#000, .25);
+}
+
+.page-header.sticky {
+  @include position(fixed, 0px 0 0 0px);
+  background: #fff;
+  border-bottom: 0px;
+  height: $page-header-default-height;
+  margin: 0;
+  padding: 12px 0;
+  width: 100%;
+  z-index: 3;
+
+  .burger {
+    background: #fff;
+    cursor: pointer;
+    margin: 8px 20px;
+    position: relative;
+    width: 20px;
+
+    &:hover .slice {
+      background: #000;
+    }
+
+    .slice {
+      background: #444;
+      height: 3px;
+      margin-bottom: 3px;
+    }
+  }
+
+  .form-control.search-field {
+    height: 32px;
+  }
+}
+
+.page-header-actions {
+  margin-left: $sidebar-default-width;
+}
+
+
+/* Media Queries */
+
+@include media-query(1280px) {
+  .page-header-actions {
+    margin-left: $sidebar-min-width;
+  }
+}
+
+@include media-query(600px) {
+  .page-header-actions {
+    margin-left: 0px;
+  }
+}
+
+
+/* Compact Mode */
+
+.compact {
+  .page-header-actions {
+    margin-left: $sidebar-compact-width;
+  }
+}

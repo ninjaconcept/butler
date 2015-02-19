@@ -1,0 +1,21 @@
+@mixin media-query ($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin screen-xs {
+  @include media-query($screen-xs);
+}
+
+@mixin screen-sm {
+  @include media-query($screen-sm);
+}
+
+@mixin screen-md {
+  @include media-query($screen-md);
+}
+
+@mixin screen-lg {
+  @include media-query($screen-lg);
+}

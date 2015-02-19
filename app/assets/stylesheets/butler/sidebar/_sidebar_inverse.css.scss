@@ -1,0 +1,82 @@
+/*
+ * -----------------------------------------------------------------
+ * Sidebar Inverse - Dark Style
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ * @requires  ui/sidebar/sidebar
+ * @requires  ui/sidebar/sidebar_navigation
+ *
+ * @author:   rebellium
+ * @updated:  Sun Aug 24 18:25:23 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.page-sidebar.inverse {
+  background: $sidebar-inverse-bg-color;
+
+  .page-sidebar-header {
+    background-color: lighten($sidebar-inverse-bg-color, 5);
+    .brand { color: #fff; }
+  }
+
+  .navigation.sidebar-navigation {
+
+    a, a:link, a:focus,
+    a:active, a:visited,  {
+      color: #fff;
+    }
+
+    ul.expand-menu {
+      background-color: lighten($sidebar-inverse-bg-color, 5);
+    }
+
+    ol > li a:hover {
+      a:hover {
+        background-color: $sidebar-inverse-bg-color;
+      }
+    }
+
+    ol {
+      background-color: lighten($sidebar-inverse-bg-color, 5);
+    }
+
+    li.divider {
+      background: tint($sidebar-inverse-bg-color, 10%);
+    }
+
+
+    a {
+
+      .fa, .title,  {
+        color: tint($sidebar-inverse-bg-color, 55%);
+      }
+
+      .title small {
+        color: tint($sidebar-inverse-bg-color, 35%);
+      }
+
+      &:hover {
+        background-color: lighten($sidebar-inverse-bg-color, 5);
+        .fa, .title, &:after {
+          color: #fff;
+        }
+        .title small {
+          color: tint($sidebar-inverse-bg-color, 70%);
+        }
+      }
+    }
+
+    li.has-submenu > a:after {
+      background: url('scss/plus_expand.svg') center no-repeat;
+    }
+
+    li.has-submenu.active > a {
+      background-color: lighten($sidebar-inverse-bg-color, 2);
+      .fa, .title{
+       color: #fff;
+      }
+    }
+  }
+}

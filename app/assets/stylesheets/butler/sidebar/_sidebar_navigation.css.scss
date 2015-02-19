@@ -1,0 +1,197 @@
+/*
+ * -----------------------------------------------------------------
+ * Sidebar Navigation
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ * @requires  ui/sidebar/sidebar
+ *
+ * @author:   rebellium
+ * @updated:  Tue Aug 26 16:17:51 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.navigation.sidebar-navigation {
+
+  a, a:link, a:focus, a:active, a:visited,  {
+    @extend .clearfix;
+    color: $text-color;
+    position: relative;
+    text-decoration: none;
+    outline: none;
+  }
+
+  ul, ol, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+  }
+
+  ul {
+    padding: 6px 0;
+
+    &.expand-menu {
+      @include position(fixed, 0 0 0px 0px);
+      background-color: lighten($sidebar-bg-color, 5);
+      box-shadow: 0 -1px 2px rgba(#000, .25);
+      display: none;
+      padding: 0;
+      width: $sidebar-compact-width;
+      z-index: 10;
+    }
+  }
+
+  ol {
+    background-color: darken($sidebar-bg-color, 5);
+    display: none;
+    padding: 5px 0;
+    ol { padding: 0; }
+  }
+
+  ol > li {
+
+    a {
+      font-size: 0;
+      font-size: $font-size-base * 0.925;
+      padding: 8px 20px 8px 50px;
+
+      &:hover {
+        background-color: $sidebar-bg-color;
+      }
+
+      .title { margin: 0; }
+      .fa { width: 20px; }
+      .fa + .title { margin-left: 24px;}
+    }
+
+    ol li a {
+      padding-left: 74px;
+    }
+  }
+
+  li.divider {
+    background: shade($sidebar-bg-color, 10%);
+    height: 1px;
+  }
+
+
+  a {
+    display: block;
+    padding: 11px 20px;
+
+    .title {
+      margin-left: 30px;
+      margin-right: 20px;
+      display: block;
+
+      small {
+        display: block;
+        padding-top: 3px;
+      }
+
+      .trunc {
+        @include ellipsis;
+        display: block;
+        max-width: 100%
+      }
+    }
+
+    .fa, .title, .title small {
+      @include transition(color 200ms ease);
+    }
+
+    .fa, .title,  {
+      color: shade($sidebar-bg-color, 55%);
+    }
+
+    &:after {
+      @include opacity(.5);
+    }
+
+    .fa {
+      width: 30px;
+      position: absolute;
+      display: block;
+      text-align: left;
+      line-height: $line-height-base;
+    }
+
+    .badge {
+      background: $sidebar-badge-color;
+      float: right;
+      font-size: 12px;
+      font-weight: 900;
+      margin-top: 1px;
+      padding: 3px 8px;
+
+      .fa {
+        display: none;
+      }
+    }
+
+    &:hover {
+      background-color: lighten($sidebar-bg-color, 5);
+      .fa, .title, &:after {
+        color: shade($sidebar-bg-color, 90%);
+      }
+
+    &:after  {
+      @include opacity(1);
+    }
+      .badge {
+        background: darken($sidebar-badge-color, 4);
+      }
+
+    }
+  }
+
+  /* Element has a submenu (OL) */
+
+  li.has-submenu > a {
+
+    &:after {
+      @include transition(all 300ms ease);
+      @include transform(rotate(0deg));
+      @include transform-origin(center);
+      background: url('scss/plus_expand_inverse.svg') center no-repeat;
+      outline: rgba(#000, 0);
+      content: '';
+      right: 20px;
+      top: 50%;
+      height: 9px;
+      margin-top: -5px;
+      display: block;
+      position: absolute;
+      width: 16px;
+    }
+  }
+
+  /* Submenu is open (OL) */
+
+  li.has-submenu.active {
+    margin-bottom: 1px;
+
+
+    &>a .fa, &>a .title{
+      color: shade($sidebar-bg-color, 90%);
+    }
+
+    &>a:after  {
+      @include opacity(1);
+    }
+
+    &> a {
+      background-color: darken($sidebar-bg-color, 3);
+      font-weight: bold;
+      &:after {
+        @include transform(rotate(-138deg));
+      }
+    }
+  }
+
+  li.toggle > ol {
+    display: block;
+  }
+}

@@ -1,0 +1,10 @@
+.panel.wizzard {
+
+  form {
+    // display: none;
+    &.first-step {
+      display: block;
+    }
+  }
+
+}

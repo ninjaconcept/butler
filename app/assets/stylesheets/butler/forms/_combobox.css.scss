@@ -1,0 +1,90 @@
+select, option {
+  font-size: 13px;
+
+}
+
+.optgroup {
+  font-weight: bold;
+}
+
+option {
+  padding: 3px;
+}
+
+.slt-wrapper, .slt {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  select:focus + .slt-label {
+    background: blue;
+  }
+
+  select {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+  height: 32px;
+    -webkit-appearance: button;
+
+    outline: 0px;
+
+    margin: 0;
+    font-size: 13px;
+
+    padding-right: 24px;
+    opacity: 0;
+  }
+
+  select:disabled + .slt-control {
+    cursor: pointer;
+    @include opacity(.5);
+  }
+
+  select:focus + .slt-control {
+  }
+
+  select:active + .slt-control {
+
+  }
+}
+
+.slt-control {
+   width: 100%;
+   position: absolute;
+   @include linear-gradient(#fff, tint($brand-default, 60%));
+   border: 1px solid rgba(#000, 0.2);
+   top: 0px;
+   display: block;
+  cursor: pointer;
+  height: 100%;
+  vertical-align: middle;
+
+  border-radius: 3px;
+      line-height: $line-height-base;
+
+}
+.slt-label {
+   line-height: $line-height-base;
+
+/*     @include ellipsis;
+     display: block;*/
+}
+
+.slt-small {
+    select {
+      height: 29px;
+
+    }
+  .slt-control {
+
+    padding: 5px 10px;
+
+
+    .slt-label {
+    font-size: 12px;
+    line-height: $line-height-base;
+
+    }
+
+  }
+}

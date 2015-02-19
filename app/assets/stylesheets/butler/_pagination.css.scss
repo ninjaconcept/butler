@@ -1,0 +1,9 @@
+.pagination {
+  li a {
+    color: $text-color;
+  }
+
+  li.active {
+    font-weight: bold;
+  }
+}

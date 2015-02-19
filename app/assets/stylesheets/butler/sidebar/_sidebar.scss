@@ -1,0 +1,132 @@
+/*
+ * -----------------------------------------------------------------
+ * Sidebar Layout
+ * -----------------------------------------------------------------
+ * @requires  bootstrap 3
+ *
+ * @author:   rebellium
+ * @updated:  Tue Aug 26 16:18:23 2014 UTC
+ *
+ * © 2014 - NinjaConcept
+ *
+ */
+
+.page-sidebar {
+  @include position(absolute, 0px 0 0 0px);
+  background: $sidebar-bg-color;
+  box-shadow: 1px 0 2px rgba(#000, .175);
+  height: 100%;
+  overflow-x: hidden;
+  width: $sidebar-default-width;
+  z-index: 4;
+
+  .global-search-field {
+    padding: 5px 20px 20px 20px;
+
+    input.search-field {
+      width: 100%;
+      @include opacity(.4);
+      &:focus {
+        @include opacity(1);
+      }
+    }
+  }
+
+  .search-field-trigger {
+    @include position(relative, 3px 0 0 -4px);
+    cursor: pointer;
+    display: none;
+    width: 90%;
+
+    &:hover .fa { color: #fff; }
+
+    .fa {
+      @include transition(color 200ms ease);
+      color: tint($sidebar-bg-color, 50%);
+      font-size: 18px;
+    }
+  }
+
+  .brand {
+    @include user-select(none);
+    color: shade($sidebar-bg-color, 100%);
+    display: block;
+    font-size: 22px;
+    line-height: 32px;
+    padding: 12px 20px;
+    text-decoration: none;
+
+    &.logo-only {
+      padding: 9px 20px;
+
+      img {
+        height: 36px;
+      }
+    }
+  }
+
+  .brand-logo {
+    display: inline-block;
+    pointer-events: none;
+    height: 26px;
+    line-height: 32px;
+    vertical-align: text-top;
+  }
+
+  .brand-name {
+    display: inline-block;
+    margin-left: 8px;
+  }
+}
+
+.page-sidebar-header {
+  background-color: lighten($sidebar-bg-color, 5);
+  box-shadow: 0 1px 3px rgba(#000, .25);
+  z-index: 10;
+  z-index: 2;
+}
+
+.page-sidebar-content {
+  @include position(absolute, $page-header-default-height 0 0px 0px);
+  overflow-x: visible;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1;
+
+  .nano {
+    .nano-pane {
+      background: rgba(#fff,.125);
+      bottom: 5px;
+      right: 5px;
+      top: 5px;
+    }
+    .nano-slider {
+      background: rgba(#fff,.3);
+    }
+  }
+}
+
+.page-sidebar.has-global-search {
+
+  .page-sidebar-header {
+    height: $page-header-default-height * 2;
+  }
+  .page-sidebar-content {
+    top: $page-header-default-height * 2;
+  }
+}
+
+
+/* Media Queries */
+
+@include media-query(1280px) {
+  .page-sidebar {
+    width: $sidebar-min-width;
+  }
+}
+
+@include media-query(600px) {
+  .page-sidebar {
+    left: -$sidebar-min-width;
+  }
+}

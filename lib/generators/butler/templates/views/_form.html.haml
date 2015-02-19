@@ -1,0 +1,24 @@
+.panel.panel-default
+  .panel-heading
+    .panel-actions.pull-right
+      %button.btn-action{ data: { toggle: 'panel' } }
+        = fa_icon 'chevron-up'
+
+    %h3.panel-title
+      Attribute
+
+  .panel-body
+    = simple_form_for [:admin, @<%= singular_table_name %>], html: { class: 'form form-horizontal <%= singular_table_name %>' } do |f|
+      .col-md-12
+<% for attribute in attributes -%>
+<% if attribute.type == :datetime || attribute.type == :date -%>
+        = f.input :<%= attribute.name %>, label: t('headers.<%= attribute.name %>'), as: :string, input_html: { class: 'datepicker' }
+<% elsif attribute.type == :boolean -%>
+        = f.input :<%= attribute.name %>, inline_label: t('headers.<%= attribute.name %>'), as: :boolean, boolean_style: :inline, label: false, wrapper: :nc_admin_ui_cb
+<% else -%>
+        = f.input :<%= attribute.name %>, label: t('headers.<%= attribute.name %>')
+<% end -%>
+<% end -%>
+
+        = f.submit t('.create', default: t('helpers.links.create')), class: 'btn btn-primary'
+        = link_to t('.cancel', default: t('helpers.links.cancel')), <%= prefixed_index_helper %>_path, class: 'btn btn-grey'
