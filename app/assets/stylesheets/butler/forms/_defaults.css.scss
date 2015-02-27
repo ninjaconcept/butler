@@ -13,7 +13,7 @@
 
 .form-control.search-field {
   @include transition(all 150ms ease-in-out);
-  background: #fff asset-data-url('scss/loupe.svg') 10px center no-repeat;
+  background: #fff asset-data-url('butler/scss/loupe.svg') 10px center no-repeat;
   border-radius: 20px;
   display: inline-block;
   font-size: 14px;
@@ -21,12 +21,12 @@
 }
 
 .form-control.datepicker {
-  background: #fff asset-data-url('scss/datepicker.svg') 10px center no-repeat;
+  background: #fff asset-data-url('butler/scss/datepicker.svg') 10px center no-repeat;
   padding-left: 30px;
 }
 
 .form-control.timepicker {
-  background: #fff asset-data-url('scss/clock.svg') 10px center no-repeat;
+  background: #fff asset-data-url('butler/scss/clock.svg') 10px center no-repeat;
   padding-left: 30px;
 }
 

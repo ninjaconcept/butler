@@ -17,7 +17,7 @@
             %table.table.table-bordered
 <% for attribute in attributes -%>
               %tr
-                %th.nowrap= t('headers.<%= attribute.name %>')
+                %th.nowrap= model_class.capitalize.constantize.human_attribute_name(attribute)
                 %td= @<%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
 

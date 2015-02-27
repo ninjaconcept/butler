@@ -4,7 +4,6 @@
 #= require moment/de
 #= require bootstrap-datetimepicker
 
-
 #= require cocoon
 
 #= require clndr

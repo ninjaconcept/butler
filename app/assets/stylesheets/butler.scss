@@ -1,23 +1,51 @@
-@import 'butler/config';
+@import 'font-awesome';
+@import 'bourbon';
 
+// Reset and dependencies
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+
+// Components
+@import "bootstrap/component-animations";
+@import "bootstrap/dropdowns";
+@import "bootstrap/button-groups";
+@import "bootstrap/input-groups";
+@import "bootstrap/navs";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/pagination";
+@import "bootstrap/alerts";
+@import "bootstrap/close";
+
+// Components w/ JavaScript
+@import "bootstrap/modals";
+@import "bootstrap-datetimepicker";
+
+@import 'butler/mixins';
+@import 'butler/config';
 @import 'butler/basics';
 @import 'butler/helpers';
 @import 'butler/navigation';
 @import 'butler/sidebar';
-
 @import 'butler/pagination';
 @import 'butler/forms';
 @import 'butler/forms/wizzard';
 @import 'butler/panels';
 @import 'butler/tables';
-@import 'butler/recurring_select';
-
 @import 'butler/dropdown';
-
 @import 'butler/user/user_profile';
 @import 'butler/user/user_login';
-
-
 @import 'butler/admin_layout';
-
 @import 'butler/xeditable';

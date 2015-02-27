@@ -1,0 +1,35 @@
+// Media Query Helpers
+@mixin media-query($breakpoint) {
+ @media only screen and (max-width: $breakpoint) {
+   @content;
+ }
+}
+
+@mixin media-query-max($breakpoint) {
+ @media only screen and (max-width: $breakpoint) {
+   @content;
+ }
+}
+
+@mixin media-query-min($breakpoint) {
+ @media only screen and (min-width: $breakpoint) {
+   @content;
+ }
+}
+
+@mixin media-query-min-max($min, $max) {
+ @media only screen and (min-width: $min) and (max-width : $max) {
+   @content;
+ }
+}
+
+
+/* DESKTOP 1024px - 1119px
+ * @include media-query-min-max($screen-md, $screen-md-max) {}
+ *
+ * TABLETS 768px - 1023px
+ * @include media-query-min-max($screen-sm, $screen-sm-max) {}
+ *
+ * PHONE 320px - 479px
+ * @include media-query-min-max($screen-xs, $screen-xs-max) {}
+ */

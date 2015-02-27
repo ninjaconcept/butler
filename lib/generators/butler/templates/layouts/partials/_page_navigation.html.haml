@@ -6,8 +6,8 @@
       %li.brand
         %a{href: '#'}
           %strong
-            %span.echo ECHO
-            %span.live LIVE
+            <%# This returns the app name.%>
+            <%= Rails.application.class.to_s.split("::").first %>
             CMS
       %li
         %a.active{href: '#'}

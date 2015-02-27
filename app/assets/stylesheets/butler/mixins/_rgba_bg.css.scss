@@ -1,0 +1,15 @@
+
+@mixin rgba-bg($name, $value) {
+  @if $name == white {
+    background-color: rgba(#fff, $value);
+    background: asset-url('css/rgbas/rgba_w_#{$value*100}.png') 0 0 repeat \9;
+  }
+  @if $name == blue {
+    background-color: rgba($brand-blue, $value);
+    background: asset-url('css/rgbas/rgba_blue_#{$value*100}.png') 0 0 repeat \9;
+  }
+  @if $name == black {
+    background-color: rgba(#000, $value);
+    background: asset-url('css/rgbas/rgba_b_#{$value*100}.png') 0 0 repeat \9;
+  }
+}

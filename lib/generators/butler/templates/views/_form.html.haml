@@ -12,11 +12,11 @@
       .col-md-12
 <% for attribute in attributes -%>
 <% if attribute.type == :datetime || attribute.type == :date -%>
-        = f.input :<%= attribute.name %>, label: t('headers.<%= attribute.name %>'), as: :string, input_html: { class: 'datepicker' }
+        = f.input :<%= attribute.name %>, label: <%= singular_table_name.capitalize.constantize.human_attribute_name(attribute) %>, as: :string, input_html: { class: 'datepicker' }
 <% elsif attribute.type == :boolean -%>
-        = f.input :<%= attribute.name %>, inline_label: t('headers.<%= attribute.name %>'), as: :boolean, boolean_style: :inline, label: false, wrapper: :nc_admin_ui_cb
+        = f.input :<%= attribute.name %>, inline_label: <%= singular_table_name.capitalize.constantize.human_attribute_name(attribute) %>, as: :boolean, boolean_style: :inline, label: false, wrapper: :nc_admin_ui_cb
 <% else -%>
-        = f.input :<%= attribute.name %>, label: t('headers.<%= attribute.name %>')
+        = f.input :<%= attribute.name %>, label: <%= singular_table_name.capitalize.constantize.human_attribute_name(attribute) %>
 <% end -%>
 <% end -%>
 

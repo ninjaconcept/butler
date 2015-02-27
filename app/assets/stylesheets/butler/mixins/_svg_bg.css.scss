@@ -1,0 +1,16 @@
+// Retina Sprite Helper,
+// include the same sprite either as svg or as png
+
+
+@mixin svg-bg($sprite, $position: 0 0, $repeat: no-repeat, $size: auto) {
+ background: transparent $position $repeat;
+ background-image: asset-url('#{$sprite}.png');
+ background-image: asset-url('#{$sprite}.svg'), none;
+ background-size: $size;
+}
+
+// Example
+//
+// .icon {
+//   @include retina-sprite('sprite', center);
+// }

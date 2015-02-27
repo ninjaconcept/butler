@@ -1,0 +1,50 @@
+@mixin single-line {
+  @include ellipsis;
+  display: block;
+}
+
+@mixin multi-line {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  &:after {
+    @include position(absolute, 0 0px 0px 0);
+    @include linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 70%);
+    content: "";
+    height: 20px;
+    text-align: right;
+    width: 100px;
+    background: asset-url('css/ie8.png') 0px -44px no-repeat\9;
+  }
+
+  &.on-grey {
+    &:after {
+      @include linear-gradient(to right, rgba($brand-light-grey, 0), rgba($brand-light-grey, 1) 70%);
+      background: asset-url('css/ie8.png') 0px 0px no-repeat\9;
+    }
+  }
+
+  &.multi-line-vertical {
+    overflow: hidden;
+
+    &:after {
+      @include position(absolute, 0 0px 0px 0);
+      @include linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 70%);
+      content: "";
+      height: 40px;
+      text-align: right;
+      width: 500px;
+      background: asset-url('css/ie8.png') 0px -66px no-repeat\9;
+    }
+  }
+
+  .bubble-white-outline-on-darkgrey & {
+    &:after {
+      @include linear-gradient(to right, rgba($brand-dark-grey, 0), rgba($brand-dark-grey, 1) 70%);
+      background: asset-url('css/ie8.png') 0px -22px no-repeat\9;
+    }
+  }
+
+  p { position: relative; z-index: -1;}
+}

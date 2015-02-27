@@ -4,15 +4,15 @@
   .persona
     = image_tag 'dummy_user.png'
     .name{ data: { toggle: 'dropdown' } }
-      %strong= current_user.email
-      %p= current_user.email
+      %strong= 'CURRENT USER EMAIL HERE'
+      %p= 'CURRENT USER EMAIL HERE'
       %span.caret
 
     %ul.dropdown-menu.pull-right{ role: 'dropdown' }
       %li
-        = link_to 'Einstellungen', edit_user_registration_path
+        = link_to 'Einstellungen', 'edit_user_registration_path'
 
       %li.divider
       %li
-        = link_to destroy_user_session_path, method: :delete do
+        = link_to 'destroy_user_session_path', method: :delete do
           = fa_icon 'power-off', text: 'Abmelden'

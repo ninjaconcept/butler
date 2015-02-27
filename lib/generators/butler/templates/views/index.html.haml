@@ -22,9 +22,9 @@
               %thead
                 %tr
 <% for attribute in attributes -%>
-                  %th= t('headers.<%= attribute.name %>')
+                  %th= <%= class_name %>.human_attribute_name('<%= attribute.name %>')
 <% end -%>
-                  %th= t('headers.created_at')
+                  %th= <%= class_name %>.human_attribute_name('created_at')
                   %th &nbsp;
 
               %tbody
