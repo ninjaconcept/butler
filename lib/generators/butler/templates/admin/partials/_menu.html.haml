@@ -1,0 +1,31 @@
+.menu
+  .container-flex.clearfix.menu-inner
+    .pull-right
+      = render 'admin/partials/user_profile'
+    %ul
+      %li.brand
+        %a{ href: '#' }
+          %strong
+            <%= Rails.application.class.parent_name.titleize %>
+            CMS
+      %li
+        %a.active{ href: '#' }
+          = <%= class_name %>.model_name.human(count: 2)
+
+      %li
+        %a{ href: '#' } Item
+
+      %li
+        %a{ href: '#', data: { toggle: 'dropdown' } }
+          Item with dropdown
+          .caret
+        %ul.dropdown-menu{ role: 'dropdown' }
+          %li
+            = link_to 'Option 1', '#'
+          %li
+            = link_to 'Option 2', '#'
+          %li
+            = link_to 'Option 3', '#'
+          %li.divider
+          %li
+            = link_to 'Option 4', '#'

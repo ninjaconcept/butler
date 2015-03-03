@@ -1,22 +1,30 @@
 !!!
 %html
   %head
-    %title <%= Rails.application.class.parent_name.titleize %> - Admin
+    %title= butler_page_title
 
-    %meta{ name: 'viewport', content: 'width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0' }
     %meta{ charset: 'utf-8' }
+    %meta{ name: 'language', content: 'de_DE' }
+    %meta{ content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible' }
+    %meta{ name: 'viewport', content: 'initial-scale = 1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width' }
+
+    %meta{ name: 'robots', content: 'noindex,nofollow' }
+    %meta{ name: 'robots', content: 'noodp'}
+    %meta{ name: 'robots', content: 'noydir'}
+
+    %link{ rel: 'icon', href: '/butler/favicon.ico', type: 'image/x-icon' }
+    %link{ rel: 'shortcut icon', href: '/butler/favicon.ico', type: 'image/x-icon' }
 
     = stylesheet_link_tag 'butler', media: 'all'
     = javascript_include_tag 'butler'
     = csrf_meta_tags
 
   %body.custom-checkboxes
-
     .admin-page-container
-
       .admin-page-navigation
-        = render 'layouts/partials/page_navigation'
+        = render 'admin/partials/menu'
 
       .admin-page-content
         = flash_messages
+
         = yield

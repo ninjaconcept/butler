@@ -1,6 +1,3 @@
-# require jquery.1.10.2
-
-
 #= require jquery
 #= require jquery_ujs
 
@@ -17,22 +14,22 @@
 #= require bootstrap-markdown
 
 # NOTE: requires api controller to render markdown preview.
-# see echo-live for code
+#       see echo-live for code
 # require markdown_setup
 
 #= require moment
 #= require moment/de
 
 #= require flyout
-
-#= require editable/bootstrap-editable
-#= require editable/rails
 #= require cocoon
 
-#= require jquery.autogrow
+# NOTE: gem's not getting loaded for unknown reason
+# require editable/bootstrap-editable
+# require editable/rails
 
+
+#= require jquery.autogrow
 #= require clndr
-# require images_loaded
 #= require json3
 #= require underscore
 

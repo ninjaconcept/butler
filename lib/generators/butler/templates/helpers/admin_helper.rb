@@ -12,6 +12,10 @@ module AdminHelper
     msg.html_safe
   end
 
+  def butler_page_title
+    "#{Rails.application.class.parent_name.titleize} - CMS"
+  end
+
   private
 
     def flash_class type

@@ -33,6 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'bourbon', '~> 3.2.4'
   spec.add_dependency 'cocoon', '~> 1.2.6'
   spec.add_dependency 'simple_form', '~> 3.1.0'
-  spec.add_dependency 'x-editable-rails', '~> 3.1.0'
+  # spec.add_dependency 'x-editable-rails' #, '~> 1.5.3'
 
 end

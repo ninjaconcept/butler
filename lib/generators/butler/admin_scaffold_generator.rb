@@ -29,18 +29,26 @@ module Butler
     end
 
     def create_admin_layout_views
-      template 'layouts/admin.html.haml', File.join('app', 'views', 'layouts', 'admin.html.haml') unless file_exists?('views/layouts/admin.html.haml')
-      template 'layouts/partials/_page_navigation.html.haml', File.join('app', 'views', 'layouts', 'partials', '_page_navigation.html.haml') unless file_exists?('views/layouts/partials/_page_navigation.html.haml')
-      template 'layouts/partials/_user_profile.html.haml', File.join('app', 'views', 'layouts', 'partials', '_user_profile.html.haml') unless file_exists?('views/layouts/partials/_user_profile.html.haml')
+      unless file_exists?('views/layouts/admin.html.haml')
+        template 'layouts/admin.html.haml', File.join('app', 'views', 'layouts', 'admin.html.haml')
+      end
+
+      unless file_exists?('views/admin/partials/_menu.html.haml')
+        template 'admin/partials/_menu.html.haml', File.join('app', 'views', prefix, 'partials', '_menu.html.haml')
+      end
+
+      unless file_exists?('views/admin/partials/_user_profile.html.haml')
+        template 'admin/partials/_user_profile.html.haml', File.join('app', 'views', prefix, 'partials', '_user_profile.html.haml')
+      end
     end
 
     def create_admin_ressource_views
       available_views.each do |view|
         filename = filename_with_extensions(view)
-        template "views/#{filename}", File.join('app/views', prefix, controller_file_path, filename)
+        template "admin/views/#{filename}", File.join('app/views', prefix, controller_file_path, filename)
       end
 
-      template 'views/_form.html.haml', File.join('app/views', prefix, controller_file_path, '_form.html.haml')
+      template 'admin/views/_form.html.haml', File.join('app/views', prefix, controller_file_path, '_form.html.haml')
     end
 
     hook_for :resource_route, in: :rails do |resource_route|
