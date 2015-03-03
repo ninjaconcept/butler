@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "jquery-rails", '~> 4.0.3'
   spec.add_dependency "jquery-ui-rails", '~> 5.0.3'
   spec.add_dependency "jquery-fileupload-rails", '~> 0.4.4'
-  spec.add_dependency 'momentjs-rails', '~> 2.8.3'
+  spec.add_dependency 'momentjs-rails', '~> 2.9.0'
   spec.add_dependency 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
   spec.add_dependency 'font-awesome-rails', '~> 4.3.0'
   spec.add_dependency 'bourbon', '~> 3.2.4'
