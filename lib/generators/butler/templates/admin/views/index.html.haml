@@ -11,7 +11,7 @@
                 = fa_icon 'plus', text: t('.new', default: t('helpers.links.new'))
 
             %h3.panel-title
-              = model_class.model_name.human(count: 2)
+              = "#{model_class.model_name.human(count: 2)} (#{@<%= plural_table_name %>.total_count})"
 
           .panel-body
             %table.table.table-bordered
@@ -30,7 +30,7 @@
                     %td= <%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
                     %td= l <%= singular_table_name %>.created_at, format: :date
-                    %td{ width: '150px' }
+                    %td{ width: '120px' }
                       .btn-group
                         = link_to <%= prefixed_plain_model_url %>_path(<%= singular_table_name %>), class: 'btn btn-tiny btn-grey', title: t('.show', default: t('helpers.links.show')) do
                           = fa_icon 'eye'

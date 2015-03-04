@@ -42,6 +42,16 @@ module Butler
       end
     end
 
+    def copy_main_assets
+      unless file_exists?('app/assets/javascripts/admin.js.coffee')
+        template 'assets/admin.js.coffee', File.join('app', 'assets', 'javascripts', 'admin.js.coffee')
+      end
+
+      unless file_exists?('app/assets/stylesheets/admin.scss')
+        template 'assets/admin.scss', File.join('app', 'assets', 'stylesheets', 'admin.scss')
+      end
+    end
+
     def create_admin_ressource_views
       available_views.each do |view|
         filename = filename_with_extensions(view)
@@ -68,6 +78,12 @@ module Butler
 
       unless file_exists?('config/initializers/simple_form_wrappers.rb')
         template 'config/initializers/simple_form_wrappers.rb', File.join('config', 'initializers', 'simple_form_wrappers.rb')
+      end
+    end
+
+    def setup_kaminari
+      unless file_exists?('config/initializers/kaminari_config.rb')
+        invoke 'kaminari:config'
       end
     end
 

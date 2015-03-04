@@ -11,6 +11,7 @@ require 'font-awesome-rails'
 require 'bourbon'
 require 'cocoon'
 require 'simple_form'
+require 'kaminari'
 # require 'x-editable-rails'
 
 module Butler
