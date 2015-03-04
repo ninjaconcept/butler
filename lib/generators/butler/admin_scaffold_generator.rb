@@ -17,7 +17,7 @@ module Butler
     end
 
     def create_admin_controller
-      template 'admin_controller_generator.rb', File.join('app', 'controllers', 'admin_controller.rb') unless file_exists?('controllers/admin_controller.rb')
+      template 'admin_controller_generator.rb', File.join('app', 'controllers', 'admin_controller.rb') unless file_exists?('app/controllers/admin_controller.rb')
     end
 
     def create_admin_ressource_controller
@@ -25,19 +25,19 @@ module Butler
     end
 
     def create_admin_helper
-      template 'helpers/admin_helper.rb', File.join('app', 'helpers', 'admin_helper.rb') unless file_exists?('helpers/admin_helper.rb')
+      template 'helpers/admin_helper.rb', File.join('app', 'helpers', 'admin_helper.rb') unless file_exists?('app/helpers/admin_helper.rb')
     end
 
     def create_admin_layout_views
-      unless file_exists?('views/layouts/admin.html.haml')
+      unless file_exists?('app/views/layouts/admin.html.haml')
         template 'layouts/admin.html.haml', File.join('app', 'views', 'layouts', 'admin.html.haml')
       end
 
-      unless file_exists?('views/admin/partials/_menu.html.haml')
+      unless file_exists?('app/views/admin/partials/_menu.html.haml')
         template 'admin/partials/_menu.html.haml', File.join('app', 'views', prefix, 'partials', '_menu.html.haml')
       end
 
-      unless file_exists?('views/admin/partials/_user_profile.html.haml')
+      unless file_exists?('app/views/admin/partials/_user_profile.html.haml')
         template 'admin/partials/_user_profile.html.haml', File.join('app', 'views', prefix, 'partials', '_user_profile.html.haml')
       end
     end
@@ -54,6 +54,23 @@ module Butler
     hook_for :resource_route, in: :rails do |resource_route|
       invoke resource_route, [prefixed_class_name]
     end
+
+    def create_simple_form_config
+      unless file_exists?('config/initializers/simple_form.rb')
+        invoke 'simple_form:install', ['--bootstrap']
+      end
+    end
+
+    def copy_simple_form_custom_config
+      unless file_exists?('config/initializers/simple_form_inline_label_fix.rb')
+        template 'config/initializers/simple_form_inline_label_fix.rb', File.join('config', 'initializers', 'simple_form_inline_label_fix.rb')
+      end
+
+      unless file_exists?('config/initializers/simple_form_wrappers.rb')
+        template 'config/initializers/simple_form_wrappers.rb', File.join('config', 'initializers', 'simple_form_wrappers.rb')
+      end
+    end
+
 
     protected
       def available_views
@@ -101,11 +118,11 @@ module Butler
       end
 
       def model_exists?
-        file_exists?("models/#{file_path}.rb")
+        file_exists?("app/models/#{file_path}.rb")
       end
 
       def file_exists?(file_path)
-        File.exists?(File.join(destination_root, 'app', file_path))
+        File.exists?(File.join(destination_root, file_path))
       end
   end
 end
