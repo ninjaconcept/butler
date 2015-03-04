@@ -67,7 +67,7 @@ module Butler
 
     def create_simple_form_config
       unless file_exists?('config/initializers/simple_form.rb')
-        invoke 'simple_form:install', ['--bootstrap']
+        invoke 'simple_form:install', nil, ['--bootstrap']
       end
     end
 
