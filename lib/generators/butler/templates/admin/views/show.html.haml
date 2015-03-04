@@ -7,16 +7,16 @@
         .panel.panel-success
           .panel-heading
             .panel-actions.pull-right
-              = link_to <%= prefixed_plain_model_url %>_path(@<%= singular_table_name %>), method: 'delete', data: { confirm: t('.confirm', default: t('helpers.links.confirm_delete', default: 'Are you sure?')) }, class: 'btn btn-danger' do
-                = fa_icon 'trash'
+              = link_to <%= prefixed_plain_model_url %>_path(@<%= singular_table_name %>), method: 'delete', data: { confirm: t('.confirm', default: t('helpers.links.confirm_delete')) }, class: 'btn btn-danger' do
+                = fa_icon 'trash', text: t('.destroy', default: t('helpers.links.destroy'))
 
               = link_to edit_<%= prefixed_plain_model_url %>_path(@<%= singular_table_name %>), class: 'btn-action btn-bordered' do
-                = fa_icon 'edit', text: t('.edit', default: t("helpers.links.edit"))
+                = fa_icon 'edit', text: t('.edit', default: t('helpers.links.edit'))
 
             %h3.panel-title
               = link_to <%= prefixed_index_helper %>_path, class: 'btn' do
                 = fa_icon 'chevron-left'
-              = "<%= singular_table_name.titleize %>: ##{@<%= singular_table_name %>.id}"
+              = "#{<%= class_name %>.model_name.human}: ##{@<%= singular_table_name %>.id}"
 
           .panel-body
             %table.table.table-bordered.table-fixed-th

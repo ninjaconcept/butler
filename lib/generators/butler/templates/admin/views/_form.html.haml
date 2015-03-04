@@ -3,10 +3,10 @@
     .panel-actions.pull-right
       - unless @<%= singular_table_name %>.new_record?
         = link_to <%= prefixed_plain_model_url %>_path(@<%= singular_table_name %>), class: 'btn-action btn-bordered' do
-          = fa_icon 'eye', text: t('.show', default: t("helpers.links.show"))
+          = fa_icon 'eye', text: t('.show', default: t('helpers.links.show'))
 
     %h3.panel-title
-      Attribute
+      = t('helpers.form.title')
 
   .panel-body
     = simple_form_for [:admin, @<%= singular_table_name %>], html: { class: 'form article' } do |f|

@@ -38,5 +38,5 @@
                         = link_to edit_<%= prefixed_plain_model_url %>_path(<%= singular_table_name %>), class: 'btn btn-grey btn-tiny', title: t('.edit', default: t('helpers.links.edit')) do
                           = fa_icon 'edit'
 
-                        = button_to <%= prefixed_plain_model_url %>_path(<%= singular_table_name %>), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) }, class: 'btn btn-danger btn-tiny', title: t('.destroy', default: t('helpers.links.destroy')) do
+                        = button_to <%= prefixed_plain_model_url %>_path(<%= singular_table_name %>), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm')) }, class: 'btn btn-danger btn-tiny', title: t('.destroy', default: t('helpers.links.destroy')) do
                           = fa_icon 'trash'
