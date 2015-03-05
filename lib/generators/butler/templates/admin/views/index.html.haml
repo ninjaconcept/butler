@@ -40,3 +40,5 @@
 
                         = button_to <%= prefixed_plain_model_url %>_path(<%= singular_table_name %>), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm')) }, class: 'btn btn-danger btn-tiny', title: t('.destroy', default: t('helpers.links.destroy')) do
                           = fa_icon 'trash'
+
+            = paginate @<%= plural_table_name %>
