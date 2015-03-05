@@ -1,4 +1,10 @@
 en:
+  time:
+    formats:
+      long_without_weekday: ! '%d.%m.%Y, %H:%M Uhr'
+      short: ! '%d. %B, %H:%M Uhr'
+      date: ! '%d.%m.%Y'
+
   helpers:
     links:
       back: Back
@@ -15,11 +21,14 @@ en:
       close: Close
     form:
       title: Attributes
+
   controller:
     create: '%{resource} wurde erfolgreich erstellt.'
     update: '%{resource} wurde erfolgreich geändert.'
     destroy:  '%{resource} wurde erfolgreich gelöscht.'
+
   user:
     edit_account: Edit Account
+
   session:
     logout: Logout

@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'cocoon', '~> 1.2.6'
   spec.add_dependency 'simple_form', '~> 3.1.0'
   spec.add_dependency 'kaminari', '~> 0.16.3'
+  spec.add_dependency 'rails-i18n', '~> 4.0.4'
   # spec.add_dependency 'x-editable-rails' #, '~> 1.5.3'
 
 end
