@@ -9,7 +9,7 @@ class <%= prefixed_controller_class_name %>Controller < <%= parent_controller_cl
   before_action :set_<%= singular_table_name %>, only: [:show, :edit, :update, :destroy]
 
   def index
-    @<%= plural_table_name %> = <%= orm_class.all(class_name) %>
+    @<%= plural_table_name %> = <%= class_name %>.page(params[:page])
   end
 
   def show
@@ -26,7 +26,7 @@ class <%= prefixed_controller_class_name %>Controller < <%= parent_controller_cl
     @<%= singular_table_name %> = <%= orm_class.build(class_name, "#{singular_table_name}_params") %>
 
     if @<%= orm_instance.save %>
-      redirect_to <%= "[:#{prefix}, @#{singular_table_name}]" %>, notice: <%= "'#{human_name} wurde erfolgreich erstellt.'" %>
+      redirect_to <%= "[:#{prefix}, @#{singular_table_name}]" %>, notice: t('controller.create', resource: <%= class_name %>.model_name.human)
     else
       render action: 'new'
     end
@@ -34,7 +34,7 @@ class <%= prefixed_controller_class_name %>Controller < <%= parent_controller_cl
 
   def update
     if @<%= orm_instance.update("#{singular_table_name}_params") %>
-      redirect_to <%= "[:#{prefix}, @#{singular_table_name}]" %>, notice: <%= "'#{human_name} wurde erfolgreich geändert.'" %>
+      redirect_to <%= "[:#{prefix}, @#{singular_table_name}]" %>, notice: t('controller.update', resource: <%= class_name %>.model_name.human)
     else
       render action: 'edit'
     end
@@ -42,7 +42,7 @@ class <%= prefixed_controller_class_name %>Controller < <%= parent_controller_cl
 
   def destroy
     @<%= orm_instance.destroy %>
-    redirect_to <%= prefixed_index_helper %>_url, notice: <%= "'#{human_name} wurde erfolgreich gelöscht.'" %>
+    redirect_to <%= prefixed_index_helper %>_url, notice:  t('controller.destroy', resource: <%= class_name %>.model_name.human)
   end
 
   private

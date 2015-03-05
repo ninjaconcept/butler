@@ -17,7 +17,7 @@ module Butler
     end
 
     def create_admin_controller
-      template 'admin_controller_generator.rb', File.join('app', 'controllers', 'admin_controller.rb') unless file_exists?('controllers/admin_controller.rb')
+      template 'admin_controller_generator.rb', File.join('app', 'controllers', 'admin_controller.rb') unless file_exists?('app/controllers/admin_controller.rb')
     end
 
     def create_admin_ressource_controller
@@ -25,27 +25,68 @@ module Butler
     end
 
     def create_admin_helper
-      template 'helpers/admin_helper.rb', File.join('app', 'helpers', 'admin_helper.rb') unless file_exists?('helpers/admin_helper.rb')
+      template 'helpers/admin_helper.rb', File.join('app', 'helpers', 'admin_helper.rb') unless file_exists?('app/helpers/admin_helper.rb')
     end
 
     def create_admin_layout_views
-      template 'layouts/admin.html.haml', File.join('app', 'views', 'layouts', 'admin.html.haml') unless file_exists?('views/layouts/admin.html.haml')
-      template 'layouts/partials/_page_navigation.html.haml', File.join('app', 'views', 'layouts', 'partials', '_page_navigation.html.haml') unless file_exists?('views/layouts/partials/_page_navigation.html.haml')
-      template 'layouts/partials/_user_profile.html.haml', File.join('app', 'views', 'layouts', 'partials', '_user_profile.html.haml') unless file_exists?('views/layouts/partials/_user_profile.html.haml')
+      unless file_exists?('app/views/layouts/admin.html.haml')
+        template 'layouts/admin.html.haml', File.join('app', 'views', 'layouts', 'admin.html.haml')
+      end
+
+      unless file_exists?('app/views/admin/partials/_menu.html.haml')
+        template 'admin/partials/_menu.html.haml', File.join('app', 'views', prefix, 'partials', '_menu.html.haml')
+      end
+
+      unless file_exists?('app/views/admin/partials/_user_profile.html.haml')
+        template 'admin/partials/_user_profile.html.haml', File.join('app', 'views', prefix, 'partials', '_user_profile.html.haml')
+      end
+    end
+
+    def copy_main_assets
+      unless file_exists?('app/assets/javascripts/admin.js.coffee')
+        template 'assets/admin.js.coffee', File.join('app', 'assets', 'javascripts', 'admin.js.coffee')
+      end
+
+      unless file_exists?('app/assets/stylesheets/admin.scss')
+        template 'assets/admin.scss', File.join('app', 'assets', 'stylesheets', 'admin.scss')
+      end
     end
 
     def create_admin_ressource_views
       available_views.each do |view|
         filename = filename_with_extensions(view)
-        template "views/#{filename}", File.join('app/views', prefix, controller_file_path, filename)
+        template "admin/views/#{filename}", File.join('app/views', prefix, controller_file_path, filename)
       end
 
-      template 'views/_form.html.haml', File.join('app/views', prefix, controller_file_path, '_form.html.haml')
+      template 'admin/views/_form.html.haml', File.join('app/views', prefix, controller_file_path, '_form.html.haml')
     end
 
     hook_for :resource_route, in: :rails do |resource_route|
       invoke resource_route, [prefixed_class_name]
     end
+
+    def create_simple_form_config
+      unless file_exists?('config/initializers/simple_form.rb')
+        invoke 'simple_form:install', nil, ['--bootstrap']
+      end
+    end
+
+    def copy_simple_form_custom_config
+      unless file_exists?('config/initializers/simple_form_inline_label_fix.rb')
+        template 'config/initializers/simple_form_inline_label_fix.rb', File.join('config', 'initializers', 'simple_form_inline_label_fix.rb')
+      end
+
+      unless file_exists?('config/initializers/simple_form_wrappers.rb')
+        template 'config/initializers/simple_form_wrappers.rb', File.join('config', 'initializers', 'simple_form_wrappers.rb')
+      end
+    end
+
+    def setup_kaminari
+      unless file_exists?('config/initializers/kaminari_config.rb')
+        invoke 'kaminari:config'
+      end
+    end
+
 
     protected
       def available_views
@@ -93,11 +134,11 @@ module Butler
       end
 
       def model_exists?
-        file_exists?("models/#{file_path}.rb")
+        file_exists?("app/models/#{file_path}.rb")
       end
 
       def file_exists?(file_path)
-        File.exists?(File.join(destination_root, 'app', file_path))
+        File.exists?(File.join(destination_root, file_path))
       end
   end
 end

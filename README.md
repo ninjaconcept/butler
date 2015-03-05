@@ -51,6 +51,13 @@ Generates admin controller with admin layout and with specific views for all mod
 
 ```rails g butler:admin_scaffold Post title:string content:text```
 
+# Dependecies
+
+## Simple Form
+
+## Kaminari
+
+https://github.com/amatsuda/kaminari
 
 ## Contributing
 

@@ -1,0 +1,28 @@
+.panel.panel-success
+  .panel-heading
+    .panel-actions.pull-right
+      - unless @<%= singular_table_name %>.new_record?
+        = link_to <%= prefixed_plain_model_url %>_path(@<%= singular_table_name %>), class: 'btn-action btn-bordered' do
+          = fa_icon 'eye', text: t('.show', default: t('helpers.links.show'))
+
+    %h3.panel-title
+      = t('helpers.form.title')
+
+  .panel-body
+    = simple_form_for [:admin, @<%= singular_table_name %>], html: { class: 'form article' } do |f|
+      .row.grey
+        .col-md-12
+<% for attribute in attributes -%>
+<% if attribute.type == :datetime || attribute.type == :date -%>
+          = f.input :<%= attribute.name %>, label: <%= singular_table_name.capitalize.constantize %>.human_attribute_name(:<%= attribute.name %>), as: :string, input_html: { class: 'datepicker' }
+<% elsif attribute.type == :boolean -%>
+          = f.input :<%= attribute.name %>, inline_label: <%= singular_table_name.capitalize.constantize %>.human_attribute_name(:<%= attribute.name %>), as: :boolean, boolean_style: :inline, label: false, wrapper: :butler_cb
+<% else -%>
+          = f.input :<%= attribute.name %>, label: <%= singular_table_name.capitalize.constantize %>.human_attribute_name(:<%= attribute.name %>)
+<% end -%>
+<% end -%>
+
+      .row
+        .col-md-12
+          = f.submit t('.create', default: t('helpers.links.create')), class: 'btn btn-primary'
+          = link_to t('.cancel', default: t('helpers.links.cancel')), <%= prefixed_index_helper %>_path, class: 'btn btn-grey'
