@@ -12,6 +12,7 @@ require 'bourbon'
 require 'cocoon'
 require 'simple_form'
 require 'kaminari'
+require 'rails-i18n'
 # require 'x-editable-rails'
 
 module Butler
