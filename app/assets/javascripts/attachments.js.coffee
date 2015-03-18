@@ -31,6 +31,7 @@ $ ->
 
   $('#panorama-image-form').fileupload(new FileUploadOptions('#panorama-image-dropzone', '#panorama-image-form').options)
 
-  $('.editable').editable(
-    { emptytext: 'Leer' }
-  )
+  # FIXME: make bootstrap editable work in butler
+  # $('.editable').editable(
+  #   { emptytext: 'Leer' }
+  # )
