@@ -7,6 +7,9 @@
 #= require dropzone_effects
 
 #= require bootstrap-sprockets
+
+#= require moment
+#= require moment/de
 #= require bootstrap-datetimepicker
 
 #= require marked.min
@@ -16,9 +19,6 @@
 # NOTE: requires api controller to render markdown preview.
 #       see echo-live for code
 # require markdown_setup
-
-#= require moment
-#= require moment/de
 
 #= require flyout
 #= require cocoon
