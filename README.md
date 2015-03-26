@@ -2,7 +2,45 @@
 
 The butler serves you assets, get it?
 
-Currently the Butler bundles stylesheets suitable for admin interfaces.
+The butler bundles together various gems and assets suitable for rapid development across NC apps.
+
+Currently, the butler provides these gems:
+
+- "sass", [">= 3.2.0", "< 3.5"]
+- "bootstrap-sass", '~> 3.3.3'
+- "haml-rails", '~> 0.8'
+- "jquery-rails", '~> 4.0.3'
+- "jquery-ui-rails", '~> 5.0.3'
+- "jquery-fileupload-rails", '~> 0.4.4'
+- 'momentjs-rails', '~> 2.9.0'
+- 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
+- 'font-awesome-rails', '~> 4.3.0'
+- 'bourbon', '~> 3.2.4'
+- 'cocoon', '~> 1.2.6'
+- 'simple_form', '~> 3.1.0'
+- 'kaminari', '~> 0.16.3'
+
+	The butler also provides custom designs for Kaminari. See Kaminari README for 	details.
+
+- 'rails-i18n', '~> 4.0.4'
+
+Additionally, the Butler provides javascript files,
+
+- jquery.autogrow (https://plugins.jquery.com/autogrow/)
+- clndr (http://kylestetz.github.io/CLNDR/)
+- json3 (https://github.com/bestiejs/json3)
+- underscore
+- bootstrap-markdown (http://github.com/toopay/bootstrap-markdown)
+- marked (https://github.com/chjj/marked)
+
+Note: more js files are being imported through gems declared above.
+
+Finally, the Butler provides some images for you to use in your app. Some of
+these images are used in the admin scaffold (See below), and therefore it would
+make sense to override them in `app/images/butler/myimage.svg`. An example is brand,
+which is supposed to stand for your brand.
+
+
 
 ## Installation
 
@@ -43,21 +81,14 @@ know what to include by default and what to ask the user to provide (such as a c
 
 Generates admin controller with admin layout and with specific views for all model attributes.
 
-### Usage
+Use as follows:
 
 ```rails g butler:admin_scaffold MODEL ATTRIBUTES```
 
-### Example
+For instance,
 
 ```rails g butler:admin_scaffold Post title:string content:text```
 
-# Dependecies
-
-## Simple Form
-
-## Kaminari
-
-https://github.com/amatsuda/kaminari
 
 ## Contributing
 
