@@ -1,34 +1,35 @@
 de:
-  time:
-    formats:
-      long_without_weekday: ! '%d.%m.%Y, %H:%M Uhr'
-      short: ! '%d. %B, %H:%M Uhr'
-      date: ! '%d.%m.%Y'
+  butler:
+    time:
+      formats:
+        long_without_weekday: ! '%d.%m.%Y, %H:%M Uhr'
+        short: ! '%d. %B, %H:%M Uhr'
+        date: ! '%d.%m.%Y'
 
-  helpers:
-    links:
-      back: Zurück
-      new: Erstellen
-      show: Anzeigen
-      create: Speichern
-      cancel: Abbrechen
-      edit: Bearbeiten
-      destroy: Löschen
-      reactivate: Aktivieren
-      confirm: 'Sind Sie sicher?'
-      confirm_delete: 'Wollen Sie diesen Eintrag wirklich löschen?'
-      copy: Kopieren
-      close: Schließen
-    form:
-      title: 'Attribute'
+    helpers:
+      links:
+        back: Zurück
+        new: Erstellen
+        show: Anzeigen
+        create: Speichern
+        cancel: Abbrechen
+        edit: Bearbeiten
+        destroy: Löschen
+        reactivate: Aktivieren
+        confirm: 'Sind Sie sicher?'
+        confirm_delete: 'Wollen Sie diesen Eintrag wirklich löschen?'
+        copy: Kopieren
+        close: Schließen
+      form:
+        title: 'Attribute'
 
-  controller:
-    create: '%{resource} wurde erfolgreich erstellt.'
-    update: '%{resource} wurde erfolgreich geändert.'
-    destroy:  '%{resource} wurde erfolgreich gelöscht.'
+    controller:
+      create: '%{resource} wurde erfolgreich erstellt.'
+      update: '%{resource} wurde erfolgreich geändert.'
+      destroy:  '%{resource} wurde erfolgreich gelöscht.'
 
-  user:
-    edit_account: 'Account bearbeiten'
+    user:
+      edit_account: 'Account bearbeiten'
 
-  session:
-    logout: 'Logout'
+    session:
+      logout: 'Logout'

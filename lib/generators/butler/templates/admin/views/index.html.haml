@@ -8,7 +8,7 @@
           .panel-heading
             .panel-actions.pull-right
               = link_to new_<%= prefixed_plain_model_url %>_path, class: 'btn-action btn-bordered' do
-                = fa_icon 'plus', text: t('.new', default: t('helpers.links.new'))
+                = fa_icon 'plus', text: t('.new', default: :'butler.helpers.links.new')
 
             %h3.panel-title
               = "#{model_class.model_name.human(count: 2)} (#{@<%= plural_table_name %>.total_count})"
@@ -32,13 +32,13 @@
                     %td= l <%= singular_table_name %>.created_at, format: :date
                     %td{ width: '120px' }
                       .btn-group
-                        = link_to <%= prefixed_plain_model_url %>_path(<%= singular_table_name %>), class: 'btn btn-tiny btn-grey', title: t('.show', default: t('helpers.links.show')) do
+                        = link_to <%= prefixed_plain_model_url %>_path(<%= singular_table_name %>), class: 'btn btn-tiny btn-grey', title: t('.show', default: :'butler.helpers.links.show') do
                           = fa_icon 'eye'
 
-                        = link_to edit_<%= prefixed_plain_model_url %>_path(<%= singular_table_name %>), class: 'btn btn-grey btn-tiny', title: t('.edit', default: t('helpers.links.edit')) do
+                        = link_to edit_<%= prefixed_plain_model_url %>_path(<%= singular_table_name %>), class: 'btn btn-grey btn-tiny', title: t('.edit', default: :'butler.helpers.links.edit') do
                           = fa_icon 'edit'
 
-                        = button_to <%= prefixed_plain_model_url %>_path(<%= singular_table_name %>), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm')) }, class: 'btn btn-danger btn-tiny', title: t('.destroy', default: t('helpers.links.destroy')) do
+                        = button_to <%= prefixed_plain_model_url %>_path(<%= singular_table_name %>), method: :delete, data: { confirm: t('.confirm', default: :'butler.helpers.links.confirm') }, class: 'btn btn-danger btn-tiny', title: t('.destroy', default: :'butler.helpers.links.destroy') do
                           = fa_icon 'trash'
 
             = paginate @<%= plural_table_name %>
