@@ -23,9 +23,9 @@ en:
       title: Attributes
 
   controller:
-    create: '%{resource} wurde erfolgreich erstellt.'
-    update: '%{resource} wurde erfolgreich geändert.'
-    destroy:  '%{resource} wurde erfolgreich gelöscht.'
+    create: '%{resource} created successfully.'
+    update: '%{resource} updated successfully.'
+    destroy:  '%{resource} deleted successfully.'
 
   user:
     edit_account: Edit Account
