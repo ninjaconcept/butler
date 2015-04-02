@@ -3,10 +3,10 @@
     .panel-actions.pull-right
       - unless @<%= singular_table_name %>.new_record?
         = link_to <%= prefixed_plain_model_url %>_path(@<%= singular_table_name %>), class: 'btn-action btn-bordered' do
-          = fa_icon 'eye', text: t('.show', default: t('helpers.links.show'))
+          = fa_icon 'eye', text: t('.show', default: :'butler.helpers.links.show')
 
     %h3.panel-title
-      = t('helpers.form.title')
+      = t('butler.helpers.form.title')
 
   .panel-body
     = simple_form_for [:admin, @<%= singular_table_name %>], html: { class: 'form article' } do |f|
@@ -24,5 +24,5 @@
 
       .row
         .col-md-12
-          = f.submit t('.create', default: t('helpers.links.create')), class: 'btn btn-primary'
-          = link_to t('.cancel', default: t('helpers.links.cancel')), <%= prefixed_index_helper %>_path, class: 'btn btn-grey'
+          = f.submit t('.create', default: :'butler.helpers.links.create'), class: 'btn btn-primary'
+          = link_to t('.cancel', default: :'butler.helpers.links.cancel'), <%= prefixed_index_helper %>_path, class: 'btn btn-grey'

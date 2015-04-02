@@ -2,7 +2,7 @@
 
 The butler serves you assets, get it?
 
-The butler bundles together various gems and assets suitable for rapid development across NC apps.
+The butler bundles together various gems and assets suitable for rapid development across NC apps. It also provides generators you can use to get up and running with your admin needs. 
 
 Currently, the butler provides these gems:
 
@@ -24,6 +24,8 @@ Currently, the butler provides these gems:
 
 - 'rails-i18n', '~> 4.0.4'
 
+For I18n, the butler provides some simple translations for your admin interface that you can override in your application. 
+
 Additionally, the Butler provides javascript files,
 
 - jquery.autogrow (https://plugins.jquery.com/autogrow/)
@@ -35,10 +37,10 @@ Additionally, the Butler provides javascript files,
 
 Note: more js files are being imported through gems declared above.
 
+
 Finally, the Butler provides some images for you to use in your app. Some of
 these images are used in the admin scaffold (See below), and therefore it would
-make sense to override them in `app/images/butler/myimage.svg`. An example is brand,
-which is supposed to stand for your brand.
+make sense to override them in `app/images/butler/myimage.svg`. An example is brand, which is supposed to stand for your brand.
 
 
 
