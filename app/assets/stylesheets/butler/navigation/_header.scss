@@ -13,7 +13,7 @@
 
 .page-header {
   @include clearfix;
-  box-shadow: 0 1px 3px rgba(#000, .25);
+  @include box-shadow(0 1px 3px rgba(#000, .25));
 }
 
 .page-header.sticky {

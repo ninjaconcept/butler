@@ -11,7 +11,7 @@
     position: relative;
     top: auto;
     width: auto;
-    box-shadow: 0 1px 3px rgba(#000, .25);
+    @include box-shadow(0 1px 3px rgba(#000, .25));
   }
 
   .container-flex {
@@ -20,5 +20,3 @@
     padding: 0 40px;
   }
 }
-
-

@@ -13,7 +13,7 @@
 
 .panel {
   @include border-radius($panel-border-radius);
-  box-shadow: none;
+  @include box-shadow(none);
   border: 0px;
   position: relative;
 

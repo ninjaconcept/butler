@@ -14,7 +14,7 @@
 .page-sidebar {
   @include position(absolute, 0px 0 0 0px);
   background: $sidebar-bg-color;
-  box-shadow: 1px 0 2px rgba(#000, .175);
+  @include box-shadow(1px 0 2px rgba(#000, .175));
   height: 100%;
   overflow-x: hidden;
   width: $sidebar-default-width;
@@ -81,7 +81,7 @@
 
 .page-sidebar-header {
   background-color: lighten($sidebar-bg-color, 5);
-  box-shadow: 0 1px 3px rgba(#000, .25);
+  @include box-shadow(0 1px 3px rgba(#000, .25));
   z-index: 10;
   z-index: 2;
 }
