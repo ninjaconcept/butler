@@ -4,7 +4,6 @@ require_dependency '<%= namespaced_file_path %>/application_controller'
 <% end -%>
 <% module_namespacing do -%>
 class <%= prefixed_controller_class_name %>Controller < <%= parent_controller_class_name %>Controller
-  layout 'admin'
 
   before_action :set_<%= singular_table_name %>, only: [:show, :edit, :update, :destroy]
 
