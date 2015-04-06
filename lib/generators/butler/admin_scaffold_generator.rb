@@ -29,16 +29,16 @@ module Butler
     end
 
     def create_admin_layout_views
-      unless file_exists?('app/views/layouts/admin.html.haml')
-        template 'layouts/admin.html.haml', File.join('app', 'views', 'layouts', 'admin.html.haml')
+      unless file_exists?('app/views/layouts/admin.haml')
+        template 'layouts/admin.haml', File.join('app', 'views', 'layouts', 'admin.haml')
       end
 
-      unless file_exists?('app/views/admin/partials/_menu.html.haml')
-        template 'admin/partials/_menu.html.haml', File.join('app', 'views', prefix, 'partials', '_menu.html.haml')
+      unless file_exists?('app/views/admin/partials/_menu.haml')
+        template 'admin/partials/_menu.haml', File.join('app', 'views', prefix, 'partials', '_menu.haml')
       end
 
-      unless file_exists?('app/views/admin/partials/_user_profile.html.haml')
-        template 'admin/partials/_user_profile.html.haml', File.join('app', 'views', prefix, 'partials', '_user_profile.html.haml')
+      unless file_exists?('app/views/admin/partials/_user_profile.haml')
+        template 'admin/partials/_user_profile.haml', File.join('app', 'views', prefix, 'partials', '_user_profile.haml')
       end
     end
 
@@ -54,11 +54,10 @@ module Butler
 
     def create_admin_ressource_views
       available_views.each do |view|
-        filename = filename_with_extensions(view)
-        template "admin/views/#{filename}", File.join('app/views', prefix, controller_file_path, filename)
+        template "admin/views/#{view}.haml", File.join('app/views', prefix, controller_file_path, "#{view}.haml")
       end
 
-      template 'admin/views/_form.html.haml', File.join('app/views', prefix, controller_file_path, '_form.html.haml')
+      template 'admin/views/_form.haml', File.join('app/views', prefix, controller_file_path, '_form.haml')
     end
 
     hook_for :resource_route, in: :rails do |resource_route|
@@ -89,6 +88,7 @@ module Butler
 
 
     protected
+
       def available_views
         %w(index show edit new)
       end
@@ -119,18 +119,6 @@ module Butler
 
       def prefixed_index_helper
         "#{prefix}_#{index_helper}"
-      end
-
-      def format
-        :html
-      end
-
-      def handler
-        :haml
-      end
-
-      def filename_with_extensions(name)
-        [name, format, handler].compact.join('.')
       end
 
       def model_exists?

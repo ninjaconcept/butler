@@ -1,0 +1,10 @@
+.content
+  .container-flex
+    .row
+      .col-md-12
+        %h3= t 'butler.views.edit.title', resource: "#{@<%= singular_table_name %>.model_name.human.titleize} ##{@<%= singular_table_name %>.id}"
+        %hr
+
+    .row
+      .col-md-12
+        = render 'form'
