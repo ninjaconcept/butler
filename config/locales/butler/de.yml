@@ -1,11 +1,11 @@
 de:
-  butler:
-    time:
-      formats:
-        long_without_weekday: ! '%d.%m.%Y, %H:%M Uhr'
-        short: ! '%d. %B, %H:%M Uhr'
-        date: ! '%d.%m.%Y'
+  time:
+    formats:
+      long_without_weekday: ! '%d.%m.%Y, %H:%M Uhr'
+      short: ! '%d. %B, %H:%M Uhr'
+      date: ! '%d.%m.%Y'
 
+  butler:
     helpers:
       links:
         back: Zurück
@@ -20,13 +20,21 @@ de:
         confirm_delete: 'Wollen Sie diesen Eintrag wirklich löschen?'
         copy: Kopieren
         close: Schließen
+
+    views:
       form:
-        title: 'Attribute'
+        title: '%{resource} Details'
+      index:
+        title: '%{resources} (%{amount})'
+      new:
+        title: '%{resource} erstellen'
+      edit:
+        title: '%{resource} bearbeiten'
 
     controller:
       create: '%{resource} wurde erfolgreich erstellt.'
       update: '%{resource} wurde erfolgreich geändert.'
-      destroy:  '%{resource} wurde erfolgreich gelöscht.'
+      destroy: '%{resource} wurde erfolgreich gelöscht.'
 
     user:
       edit_account: 'Account bearbeiten'
