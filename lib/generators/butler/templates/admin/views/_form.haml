@@ -6,7 +6,7 @@
           = fa_icon 'eye', text: t('.show', default: :'butler.helpers.links.show')
 
     %h3.panel-title
-      = t('butler.helpers.form.title')
+      = t 'butler.views.form.title', resource: @<%= singular_table_name %>.class.name
 
   .panel-body
     = simple_form_for [:admin, @<%= singular_table_name %>], html: { class: 'form article' } do |f|
