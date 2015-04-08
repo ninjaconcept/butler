@@ -23,7 +23,7 @@
 
               %tbody
                 - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
-                  %tr
+                  %tr[<%= singular_table_name %>]
 <% for attribute in attributes -%>
                     %td= <%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
