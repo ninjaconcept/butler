@@ -25,7 +25,7 @@ class <%= prefixed_controller_class_name %>Controller < <%= parent_controller_cl
     @<%= singular_table_name %> = <%= orm_class.build(class_name, "#{singular_table_name}_params") %>
 
     if @<%= orm_instance.save %>
-      redirect_to <%= "[:#{prefix}, @#{singular_table_name}]" %>, notice: t('controller.create', resource: <%= class_name %>.model_name.human, default: :'butler.controller.create')
+      redirect_to <%= prefixed_index_helper %>_path, notice: t('controller.create', resource: <%= class_name %>.model_name.human, default: :'butler.controller.create')
     else
       render action: 'new'
     end
@@ -41,7 +41,7 @@ class <%= prefixed_controller_class_name %>Controller < <%= parent_controller_cl
 
   def destroy
     @<%= orm_instance.destroy %>
-    redirect_to <%= prefixed_index_helper %>_url, notice:  t('controller.destroy', resource: <%= class_name %>.model_name.human, default: :'butler.controller.destroy')
+    redirect_to <%= prefixed_index_helper %>_path, notice:  t('controller.destroy', resource: <%= class_name %>.model_name.human, default: :'butler.controller.destroy')
   end
 
   private
