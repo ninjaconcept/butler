@@ -2,7 +2,7 @@
   .panel-heading
     .panel-actions.pull-right
       - unless @<%= singular_table_name %>.new_record?
-        = link_to <%= prefixed_plain_model_url %>_path(@<%= singular_table_name %>), class: 'btn-action btn-bordered' do
+        = link_to <%= prefixed_plain_model_url %>_path(@<%= singular_table_name %>), class: 'btn-action btn-bordered', title: t('.show', default: t('butler.helpers.links.show')) do
           = fa_icon 'eye', text: t('.show', default: :'butler.helpers.links.show')
 
     %h3.panel-title

@@ -64,6 +64,12 @@ module Butler
       invoke resource_route, [prefixed_class_name]
     end
 
+    def create_i18n_config
+      unless file_exists?('config/initializers/i18n.rb')
+        template 'config/initializers/i18n.rb', File.join('config', 'initializers', 'i18n.rb')
+      end
+    end
+
     def create_simple_form_config
       unless file_exists?('config/initializers/simple_form.rb')
         invoke 'simple_form:install', nil, ['--bootstrap']
