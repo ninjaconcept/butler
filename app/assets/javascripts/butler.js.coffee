@@ -36,7 +36,7 @@
 
 $ ->
   $('.datepicker').datetimepicker
-    language: 'de'
+    locale: 'de'
     pick12HourFormat: false
     minuteStepping: 15
 
