@@ -36,9 +36,6 @@
 
 $ ->
   $('.datepicker').datetimepicker
-    locale: 'de'
-    pick12HourFormat: false
-    minuteStepping: 15
 
   $('textarea').autoGrow()
 
