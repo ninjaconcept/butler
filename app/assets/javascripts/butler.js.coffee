@@ -36,6 +36,12 @@
 
 $ ->
   $('.datepicker').datetimepicker
+    format: 'L'
+    icons:
+      time: 'fa fa-clock-o',
+      date: 'fa fa-calendar',
+      up: 'fa fa-chevron-up',
+      down: 'fa fa-chevron-down'
 
   $('textarea').autoGrow()
 
