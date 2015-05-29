@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Butler::VERSION
   spec.authors       = ['Mohamed Wael Khobalatte', 'Stefan Botzenhart']
   spec.email         = ['wael.khobalatte@gmail.com', 'sb@ninjaconcept.com']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Butler serves assets and provides generators.}
+  spec.description   = %q{}
   spec.homepage      = ""
   spec.license       = "MIT"
 
